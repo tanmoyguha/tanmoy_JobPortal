@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using System.Data.SqlClient;
+using System.Data.Sql;
+
+public partial class JS_home : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+     //   if (Session["name"].ToString())
+     //   {
+     //       Response.Redirect("");
+     //   }
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        SqlCommand com;
+        SqlDataReader dr;
+        DataSet ds = new DataSet();
+        SqlConnection sql1 = new SqlConnection("Data Source=.\\pioneer-0715f43\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\pmsystem.dbo;Integrated Security=True;User Instance=True");
+        sql1.Open();        
+        string s1="select * from js_login where email="+uname.Text.ToString();
+        com = new SqlCommand(s1, sql1);
+        //com.ExecuteNonQuery();
+        dr = com.ExecuteReader();
+        bool found = false;
+        while (dr.Read())
+        {
+                if (dr[1].ToString() == pwd.Text.ToString())
+                {
+                    found = true;
+                    Session["name"] = uname.Text.ToString();
+                    Response.Redirect("JsHomePage.aspx");
+                }
+                else
+                {
+                    found = true;
+                    warn.Visible = true;
+                    warn.Text = "Wrong Password.";
+                }            
+        }
+        if (found == false)
+        {
+            warn.Visible = true;
+            warn.Text = "Account Not Found, You Need To Register.";
+            uname.Text = "";
+            pwd.Text = "";
+            uname.Focus();
+        }
+        dr.Close();
+    }
+
+}

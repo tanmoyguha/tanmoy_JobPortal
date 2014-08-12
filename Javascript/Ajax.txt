@@ -1,0 +1,150 @@
+var req;
+var retfunction;
+
+function AJAXRequest(url,retfun) {
+    
+    retfunction = this;
+    retfunction.retfun = retfun;
+    
+    if (typeof XMLHttpRequest != "undefined") {
+        req = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        req = new ActiveXObject("Microsoft.XMLHTTP"); 
+    }
+    req.open("GET", url, false);
+    req.onreadystatechange = executeReturn;
+    req.send(null);
+}
+
+function AJAXRequest(url,retfun,errfun) {
+    
+    retfunction = this;
+    retfunction.retfun = retfun;
+    if(errfun!=null){
+        retfunction.errfun= errfun;
+    }
+    
+    try{    
+        if (typeof XMLHttpRequest != "undefined"){
+            req = new XMLHttpRequest();
+        }else if (window.ActiveXObject) {
+            req = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        req.open("GET", url, false);
+        req.onreadystatechange = executeReturn;
+        req.send(null);
+    }catch(e){
+    }
+    
+}
+
+function AJAXRequest_async(url,retfun,errfun) {
+    
+    retfunction = this;
+    retfunction.retfun = retfun;
+    if(errfun!=null){
+        retfunction.errfun= errfun;
+    }
+    
+    try{    
+        if (typeof XMLHttpRequest != "undefined"){
+            req = new XMLHttpRequest();
+        }else if (window.ActiveXObject) {
+            req = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        req.open("GET", url, true);
+        req.onreadystatechange = executeReturn;
+        req.send(null);
+    }catch(e){
+    }
+    
+}
+
+function AJAXRequestWithProxy(url,retfun,errfun) {
+    
+    retfunction = this;
+    retfunction.retfun = retfun;
+    if(errfun!=null){
+        retfunction.errfun= errfun;
+    }
+    
+    try{    
+        if (typeof XMLHttpRequest != "undefined") {
+            req = new XMLHttpRequest();
+        }else if (window.ActiveXObject) {
+            req = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        req.open("GET","/24online/webpages/ajaxproxy.jsp?url="+escape(url), true);
+        req.onreadystatechange = executeReturn;
+        req.send(null);
+    }catch(e){
+        //alert("Exception e : "+e.description);
+    }
+    
+}
+
+function executeReturn() {
+    try {
+        // If the request's status is "complete"
+        if (req.readyState == 4) {
+            // Check that we received a successful response from the server
+            if (req.status == 200) {
+                // update the HTML DOM based on whether or not message is valid
+                retfunction.retfun();
+            } else {
+                if(retfunction.errfun!=null){
+                    retfunction.errfun();
+                }else{
+                    errorfun();
+                }
+                //alert('There was a problem with the request.');
+            }               
+        }
+    }catch( e ) {
+            if(retfunction.errfun!=null){
+                retfunction.errfun();
+            }else{
+                errorfun();
+            }
+        // An HTTP problem has occurred
+        //alert("HTTP error "+e,e);
+    }   
+}
+
+function fillCombo(comboname,tagname){
+    fillComboWithIndex(comboname,tagname,0);
+}
+
+function fillComboWithIndex(comboname,tagname,index){
+    var xmlDoc = req.responseXML.documentElement;
+    
+    var targ=document.getElementsByName(comboname)[index];      
+    targ.options.length=0;        
+    
+    var options = xmlDoc.getElementsByTagName(tagname);
+    
+    var key;
+    var val;
+
+    for( var i=0; i < options.length; i++ ) {
+        key = options[i].getElementsByTagName("key");
+        val = options[i].getElementsByTagName("value");
+        
+        targ.options[ i ] = new Option( val[0].firstChild.data, key[0].firstChild.data );
+    }   
+}
+
+/*
+    We can overwrite both these functions and put these functions
+    i.e. sessinExpired() and errorfun() in the our jsp
+    from where we are calling the AJAX code.
+*/
+function sessionExpired(){
+    location.href = '/24online/webpages/sessionexpired.jsp';
+}
+
+function errorfun(){
+        // An HTTP problem has occurred
+        alert("An error has occured");
+}
+

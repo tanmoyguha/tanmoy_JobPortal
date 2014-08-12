@@ -1,0 +1,412 @@
+/* Global Styles */
+
+body {
+	margin:0px;
+	background-color: #F3F3F3; 
+	}
+	
+table{
+	border : none;
+}	
+
+ul li{
+	border-left:none;
+}
+
+	
+tr{
+	background-color: #FFFFFF;
+	border : none;
+	}
+
+td {
+	font:14px Arial, Helvetica, sans-serif;
+	color: #000000;
+	border : none;
+	}
+	
+a {
+	color: #FF6600;
+	/*color: #A59FB9;*/
+	font-weight:bold;
+	text-decoration:none;
+	}
+	
+a:hover {
+	color: #FFBA00;
+/*	z-index: 1;*/
+	/*color: #A59FB9;*/
+	}
+	
+/* ID Styles */
+
+#navigation a {
+	color: #26354A;
+	/*color: #A59FB9;*/
+	text-decoration: none;
+	letter-spacing:.1em;
+	line-height:16px;
+	display: block;
+	padding: 0px 10px;
+	border-right:1px solid #FF6600;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	font-size: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 109px;
+}
+	
+#navigation a:hover {
+	color:#ffffff;
+	background: #AEAEFF;
+	/*background: #FF6600;*/
+/*	z-index: 1;*/
+	}
+	
+#navigation ul li{
+	float : left;
+}	
+
+#nav1{
+	float : right;
+}
+
+/*ul
+{
+	z-index: 1;
+	}*/
+/*	ul a:hover
+	{
+		
+	}
+	
+#dropdown a
+{
+	z-index: -1;
+	}	
+	#dropdown a:hover
+	{
+		z-index: 1;
+		}
+*/			
+	
+/*a #dropdown{
+	z-index: -1;
+}	
+	
+a:hover #dropdown{
+	z-index: 1;
+}*/	
+
+#padding {
+	padding:14px;
+}
+	
+#content {
+	float: right;
+	width: 70%;
+	padding: 0;
+	margin-left: 0px;
+	height: 1043px;
+}
+
+#page {
+	width: 851px;
+	margin: 0 auto;
+	padding: 0;
+	height: 1244px;	
+}	
+
+#page-bgtop {
+	padding: 40px 25px ;
+}
+
+#calheader td {
+	font-weight:bold;
+	color: #ffffff;
+	}
+	
+#navigation ul li{
+	float : left;
+}	
+
+#content {
+	float: right;
+	width: 621px;
+	/*margin-left: 40px;*/
+	height: 1174px;
+	background-color: #FFFFFF; 
+}
+
+#contentleft {
+	float: left;
+	width: 235px;
+	padding: 0;
+	height: 1043px;
+	margin-right: 40px;
+}
+
+#contentright {
+	float: left;
+	width: 235px;
+	padding: 0;
+	height: 1043px;
+	margin-left: 40px;
+}
+
+#page {
+	width: 1021px;
+	margin: 0 auto;
+	padding: 0;
+	height: 1329px;	
+}
+
+#pagetop{
+	width: inherit;	
+	margin: 0 auto;	
+}	
+
+#page-bgtop {
+	padding: 40px 15px ;
+}
+
+#page-bgtop ul li {
+	float: left;	
+	}
+	
+/* Calendar Styles */
+/*
+#calendar td {
+	border: 1px solid #26354A; 
+	}
+	
+#noborder td {
+	border: 0px;
+	}
+
+#calheader td {
+	font-weight:bold;
+	color: #ffffff;
+	}*/	
+	
+/* Class Styles */
+
+.logo {
+	font:24px Times New Roman, Times, serif;
+	color: #FFBA00;
+	letter-spacing:.3em;
+	line-height:26px;
+	}
+	
+.tagline {
+	font: 11px Arial, Helvetica, sans-serif;
+	color: #6666FF;
+	line-height:16px;
+	}
+	
+.bodyText {
+	font:11px Arial, Helvetica, sans-serif;
+	line-height:22px;
+	color:#26354A;
+	letter-spacing:.1em;
+	}
+
+.detailText {
+	font:11px Arial, Helvetica, sans-serif;
+	line-height:16px;
+	color:#26354A;
+	letter-spacing:.1em;
+	}
+	
+.pageName {
+	font:24px Arial, Helvetica, sans-serif;
+	color: #FF6600;
+	letter-spacing:.2em;
+	line-height:32px;
+	}
+	
+.subHeader {
+	font:bold 12px Arial, Helvetica, sans-serif;
+	color: #2D374D;
+	font-weight:bold;
+	line-height:20px;
+	letter-spacing:.1em;
+	}
+	
+.navText {
+	font:10px Arial, Helvetica, sans-serif;
+	color: #26354A;
+	letter-spacing:.1em;
+	/*line-height:16px;*/
+	}
+	
+.title {
+	/*height: 0px;*/
+	margin-bottom: 10px;
+	padding: 12px 0 0 20px;
+	/*background: #01BBEC;*/
+	background: #FFFFCA;
+	letter-spacing: -.5px;
+	color: #FFBA00;		 
+	width: inherit;
+}
+
+.post {
+	margin-bottom: 25px;
+	padding: 20px 0px;
+	background: #FFFFFF;
+	height: 1226px;
+}
+
+.post2{
+	/*padding: inherit;*/
+	padding: 50px, 40px, 50px, 40px;  
+	background: #FFFFFF;
+	}
+
+.post1 {
+	margin-bottom: 25px;
+	padding: 20px 0px 0px 0px ;	
+	background: #FFFFFF;
+	}
+
+/*.menu{
+	position: inherit;
+	z-index: 99;
+	white-space: nowrap;	
+	left: auto; 
+}
+
+.menu1{
+	position: inherit;
+	z-index: 99;
+	top: 35px;	
+	white-space: nowrap;
+}*/
+
+/*#navigation navtext{
+	font:10px Arial, Helvetica, sans-serif;
+	color: #26354A;
+	text-decoration: none;
+	letter-spacing:.1em;
+	line-height:20px;
+	display:block;
+	padding: 0px 10px;
+	border-right:1px solid #FF6600;
+	z-index: 0;	
+	}*/
+
+/*#navigation navtext:hover {
+	color:#ffffff;
+	background: #FF6600;
+	z-index: 1;
+	}*/	
+
+.calendarText {
+	font:11px Arial, Helvetica, sans-serif;
+	color: #26354A;
+	letter-spacing:.1em;
+	}
+	
+	
+.sidebarText {
+	font:11px Arial, Helvetica, sans-serif;
+	color: #FFBA00;
+	letter-spacing:.1em;
+	line-height:18px;
+	}
+	
+.style1
+        {
+            line-height: 22px;
+            color: #26354A;
+            letter-spacing: .1em;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: bold;
+            font-size: 11px;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 158px;
+        }
+
+.style2
+		{
+			Width: 111px; 
+			background-color: #7B7BA8;
+			border-color: #C1ADE2; 
+			border-style: ridge;
+			font-weight: bold;
+			color: White;
+		}
+		
+.style3
+		{
+			line-height: 22px;
+            color: #26354A;
+            letter-spacing: .1em;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: bold;
+            font-size: 11px;            
+            font-family: Arial, Helvetica, sans-serif;
+			Width: 220px;
+			Height: 27px;			
+		}
+		
+.style4{
+			line-height: 22px;
+            color: #26354A;
+            letter-spacing: .1em;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: bold;
+            font-size: 11px;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 401px;	
+}	
+
+.style5{
+	color: #9683E2;	
+	/*color: #FF6600;*/
+	font-weight:bold;
+	text-decoration: underline;	
+}	
+
+.style6
+        {
+            line-height: 10px;
+            background-color: #F3F3F3;
+            color: #26354A;
+            letter-spacing: .1em;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: bold;
+            font-size: 11px;
+            font-family: Arial, Helvetica, sans-serif;
+            width: inherit;
+        }
+        
+.style7{
+            width: 1%;
+            background-color: #FFFFCC;
+}
+
+.style8{
+            width: 44%;
+            background-color: #FFFFCC;
+}
+
+.style9{
+            color: #FFBA00;
+            background-color: #FFFFCC;
+            letter-spacing: .3em;
+            line-height: 26px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 24px;
+            font-family: "Times New Roman", Times, serif;
+            width: 55%;
+}
+

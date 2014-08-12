@@ -1,0 +1,97 @@
+<html>
+
+<head>
+<link href="Test.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title> ABC Corp - Login Page </title>
+</head>
+<body>
+
+<script type="text/javascript">
+String.prototype.trim = function () {
+    return this.replace(/^\s*/, "").replace(/\s*$/, "");
+}
+
+function Validate(form)
+{
+if(document.forms[0].elements[0].value.trim() =="")
+	{
+		document.forms[0].elements[0].focus();
+		document.getElementById("ShowError").innerHTML = "Name Is Missing";
+		return false;
+	}
+else if(document.forms[0].elements[1].value.trim() =="")
+	{
+		document.forms[0].elements[1].focus();
+		document.getElementById("ShowError").innerHTML = "Password Is Missing";
+		return false;
+	}
+else if(document.forms[0].elements[2].value.trim() =="")
+	{
+		document.forms[0].elements[2].focus();
+		document.getElementById("ShowError").innerHTML = "Confirm Password";
+		return false;
+	}
+else if(document.forms[0].elements[3].value =="false" && document.forms[0].elements[4].value =="false")
+	{
+		document.getElementById("ShowError").innerHTML = "Select Gender";
+		return false;
+	}
+else (document.forms[0].elements[5].value =="false")
+	{
+		document.getElementById("ShowError").innerHTML = "Terms and Agreement";
+		return false;
+	}
+	
+<!--else if(document.forms[0].elements[3].value.trim() !="")
+	{
+		pass=document.forms[0].elements[3].value.indexOf('@',0);
+		
+		pass1=document.forms[0].elements[3].value.indexOf('.',0);
+		
+		if((pass==-1)||(pass1==-1))
+		{
+			document.getElementById("ShowError").innerHTML = "Invalid Email Address Entered";
+			document.forms[0].elements[3].focus();
+			return false;
+		}
+	}--!>
+}
+
+
+</script>
+
+<div id="container">
+<div id="header">
+<div style="text-align: right;"><a href="#">Logout</a></div>
+</div>
+<div id="main">		
+		
+<form name="myform" id="myform" method="post" action="AddCustomer" onsubmit="return Validate(this.form)">		
+
+<center>
+		<br>	
+<h2> Customer Login </h2>
+<br>
+<p style="text-align: right; width: 300px">
+Name:  <input type="text" name="customername"><br><br>
+Password:  <input type="password" name="customeraddress"><br><br>
+Confirm Password: <input type="password" name="description" ><br><br>
+Gender: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input name="radiobutton" type="radio" value="radiobutton">
+            Male  
+	 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input name="radiobutton" type="radio" value="radiobutton">	
+	    Female
+         <br><br>
+<input name="checkbox" type="checkBox" value="checkbox"> Agreement &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+</p>
+
+<input type="submit"  value="Submit" name="b1" class="Button"><br><br>
+<label id="ShowError" style="color: #FF0000"></label>
+</center>
+<br>
+</div>
+<div id="footer">
+</div>
+</div>
+</body>
+</html>
